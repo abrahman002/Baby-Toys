@@ -4,7 +4,7 @@ import Gallery from '../Gallery/Gallery';
 import ShopByCategory from '../Shop by category/ShopByCategory';
 import FeaturedProducts from '../../FeaturedProducts/FeaturedProducts';
 import Post from '../../Post/Post';
-import Delivery from '../../../Routes/Delivery/Delivery';
+import Delivery from '../../Delivery/Delivery';
 
 const Home = () => {
     return (
@@ -14,7 +14,7 @@ const Home = () => {
             <ShopByCategory></ShopByCategory>
             <FeaturedProducts></FeaturedProducts>
             <Post></Post>
-            <Delivery></Delivery>
+           <Delivery></Delivery>
         </div>
     );
 };

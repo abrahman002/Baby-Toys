@@ -1,9 +1,47 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FcGoogle } from "react-icons/fc";
+import { useContext } from 'react';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
+import Swal from 'sweetalert2'
+
 
 
 const Register = () => {
+    const { createUser } = useContext(AuthContext);
+    // const [succes, setSuccess] = useState('');
+
+    const handleregister = event => {
+        event.preventDefault();
+
+        const form = event.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        const photo = form.photo.value;
+        const user = { name, email, password, photo }
+        console.log(user)
+
+        createUser(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+                Swal.fire({
+                    title: 'Success',
+                    text: 'Do you want to continue',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                  })
+            })
+            .catch(error =>{
+                Swal.fire({
+                    title: error.message,
+                    text: 'Do you want to continue',
+                    icon: 'error',
+                    confirmButtonText: 'Cool'
+                  })
+            })
+    }
     return (
         <div>
             <div className="hero min-h-screen ">
@@ -13,7 +51,7 @@ const Register = () => {
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-xl bg-base-100">
                         <h1 className="text-4xl font-semibold text-center">Register now!</h1>
-                        <form >
+                        <form onSubmit={handleregister}>
                             <div className="card-body">
                                 <div className="form-control">
                                     <label className="label">
@@ -31,13 +69,13 @@ const Register = () => {
                                     <label className="label">
                                         <span className="label-text">Password</span>
                                     </label>
-                                    <input type="text" placeholder="password" name='password' className="input input-bordered" />
+                                    <input type="password" placeholder="password" name='password' className="input input-bordered" />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Photo Url</span>
                                     </label>
-                                    <input type="text" placeholder="Photo Url" name='Photo' className="input input-bordered" />
+                                    <input type="text" placeholder="Photo Url" name='photo' className="input input-bordered" />
                                 </div>
                                 <div className="form-control mt-6">
                                     <button className="btn btn-primary">Register</button>
@@ -47,6 +85,7 @@ const Register = () => {
                                         Login
                                     </Link></a>
                                 </label>
+
                                 <div className="divider">OR</div>
                                 <p className='text-4xl '>
                                     <FcGoogle />
