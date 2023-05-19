@@ -8,7 +8,7 @@ import Swal from 'sweetalert2'
 
 
 const Register = () => {
-    const { createUser } = useContext(AuthContext);
+    const { createUser, googleSignIn } = useContext(AuthContext);
     // const [succes, setSuccess] = useState('');
 
     const handleregister = event => {
@@ -27,19 +27,41 @@ const Register = () => {
                 const user = result.user;
                 console.log(user)
                 Swal.fire({
-                    title: 'Success',
+                    title: 'Successfully Register',
                     text: 'Do you want to continue',
                     icon: 'success',
                     confirmButtonText: 'Cool'
-                  })
+                })
             })
-            .catch(error =>{
+            .catch(error => {
                 Swal.fire({
                     title: error.message,
                     text: 'Do you want to continue',
                     icon: 'error',
                     confirmButtonText: 'Cool'
-                  })
+                })
+            })
+    }
+
+    const handleGoogleSignIn = () => {
+        googleSignIn()
+            .then(result => {
+                console.log(result)
+                Swal.fire({
+                    title: 'Successfully Register',
+                    text: 'Do you want to continue',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                })
+            })
+            .catch(error => {
+                console.log(error)
+                Swal.fire({
+                    title: error.message,
+                    text: 'Do you want to continue',
+                    icon: 'error',
+                    confirmButtonText: 'Cool'
+                })
             })
     }
     return (
@@ -57,42 +79,38 @@ const Register = () => {
                                     <label className="label">
                                         <span className="label-text">Name</span>
                                     </label>
-                                    <input type="text" placeholder="Name" name='name' className="input input-bordered" />
+                                    <input type="text" placeholder="Name" name='name' className="input input-bordered" required/>
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Email</span>
                                     </label>
-                                    <input type="text" placeholder="email" name='email' className="input input-bordered" />
+                                    <input type="text" placeholder="email" name='email' className="input input-bordered" required />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Password</span>
                                     </label>
-                                    <input type="password" placeholder="password" name='password' className="input input-bordered" />
+                                    <input type="password" placeholder="password" name='password' className="input input-bordered"  required/>
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Photo Url</span>
                                     </label>
-                                    <input type="text" placeholder="Photo Url" name='photo' className="input input-bordered" />
+                                    <input type="text" placeholder="Photo Url" name='photo' className="input input-bordered" required />
                                 </div>
                                 <div className="form-control mt-6">
-                                    <button className="btn btn-primary">Register</button>
+                                    <input type="submit" value="Register" className="btn btn-primary" />
                                 </div>
                                 <label className="label">
                                     <a href="#" className="label-text-alt link link-hover text-sm">Already have an Account Baby Toys?<Link to='/login' className='text-warning-'>
                                         Login
                                     </Link></a>
                                 </label>
-
                                 <div className="divider">OR</div>
-                                <p className='text-4xl '>
-                                    <FcGoogle />
-                                </p>
+                                <button className='text-4xl' onClick={handleGoogleSignIn}><FcGoogle /></button>
                             </div>
                         </form>
-
                     </div>
                 </div>
             </div>
