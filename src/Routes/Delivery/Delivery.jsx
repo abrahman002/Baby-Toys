@@ -3,8 +3,8 @@ import { HiBeaker,HiOutlineSupport,HiOutlineGlobe,HiOutlineTruck } from "react-i
 
 const Delivery = () => {
     return (
-        <div className='grid grid-cols-4 bg-slate-200 p-5 rounded'>
-            <div className='flex gap-2 '>
+        <div className='grid lg:grid-cols-4 bg-slate-200 p-5 rounded  '>
+            <div className='lg:flex gap-2  '>
                 <div className='text-4xl'>
                 <HiBeaker />
                 </div>
@@ -13,7 +13,7 @@ const Delivery = () => {
                 <p className='text-sm'>Free shipping on all UK orders</p>
                 </div>
             </div>
-            <div className='flex gap-2 '>
+            <div className='lg:flex gap-2 '>
                 <div className='text-4xl'>
                     <HiOutlineSupport/>
                 </div>
@@ -22,7 +22,7 @@ const Delivery = () => {
                 <p className='text-sm'>We are guarantee to your money</p>
                 </div>
             </div>
-            <div  className='flex gap-2 '>
+            <div  className='lg:flex gap-2 '>
                 <div className='text-4xl'>
                   <HiOutlineGlobe/>
                 </div>
@@ -31,7 +31,7 @@ const Delivery = () => {
                 <p className='text-sm'>24 Hour online Support</p>
                </div>
             </div>
-            <div  className='flex gap-2 '>
+            <div  className='lg:flex gap-2 '>
                 <div className='text-4xl'>
                   <HiOutlineTruck/>
                 </div>
