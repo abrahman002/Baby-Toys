@@ -4,6 +4,8 @@ import {
 import Main from "../Layout/Main";
 import ErrorPage from "../Page/ErrorPage/ErrorPage";
 import Home from "../Page/Home/Home/Home";
+import Alltoys from "../Page/Alltoys/Alltoys";
+import Blog from "../Page/Blogs/Blog";
 
 const router = createBrowserRouter([
   {
@@ -14,6 +16,14 @@ const router = createBrowserRouter([
       {
         path:'/',
         element:<Home></Home>
+      },
+      {
+        path:'/alltoys',
+        element:<Alltoys></Alltoys>
+      },
+      {
+        path:'/blog',
+        element:<Blog></Blog>
       }
     ]
   },
