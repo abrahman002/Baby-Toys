@@ -1,12 +1,12 @@
 import React from 'react';
-import { HiBeaker,HiOutlineSupport,HiOutlineGlobe,HiOutlineTruck } from "react-icons/hi";
+import { HiOutlineBeaker,HiOutlineSupport,HiOutlineGlobe,HiOutlineTruck } from "react-icons/hi";
 
 const Delivery = () => {
     return (
         <div className='grid lg:grid-cols-4 bg-slate-200 p-5 rounded  '>
             <div className='lg:flex gap-2  '>
                 <div className='text-4xl'>
-                <HiBeaker />
+                <HiOutlineBeaker />
                 </div>
                 <div>
                 <h1>Free Shipping</h1>
