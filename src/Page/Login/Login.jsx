@@ -35,7 +35,7 @@ const Login = () => {
                                     <button className="btn btn-primary">Login</button>
                                 </div>
                                 <label className="label">
-                                    <a href="#" className="label-text-alt link link-hover text-xl">New To Baby Toys?<Link to='/register' className='text-warning-'>
+                                    <a href="#" className="label-text-alt link link-hover text-sm">New To Baby Toys?<Link to='/register' className='text-warning-'>
                                         Register
                                     </Link></a>
                                 </label>
