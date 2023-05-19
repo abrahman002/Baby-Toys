@@ -22,7 +22,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <img style={{width:'80px',height:'80px'}} src="https://static.vecteezy.com/system/resources/previews/004/657/170/original/baby-shop-logo-with-cute-baby-face-illustration-free-vector.jpg" alt="" />
-                <a className="btn btn-ghost normal-case text-xl">Baby Toys</a>
+                <a className=" text-xl ">Baby Toys</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">

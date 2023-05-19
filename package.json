@@ -10,6 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.13.1",
+    "@mui/styled-engine-sc": "^5.12.0",
     "daisyui": "^2.51.6",
     "firebase": "^9.22.0",
     "localforage": "^1.10.0",
@@ -20,7 +24,9 @@
     "react-photo-album": "^2.2.2",
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.11.2",
+    "react-tabs": "^6.0.1",
     "sort-by": "^1.2.0",
+    "styled-components": "^5.3.10",
     "swiper": "^9.3.2"
   },
   "devDependencies": {

@@ -31,7 +31,7 @@ const Gallery = () => {
             height: 400
         },
         {
-            src: "https://cdn.cdnparenting.com/articles/2018/09/377726401-H.jpg",
+            src: "https://m.media-amazon.com/images/I/71XQs3DuOgL.jpg",
             width: 400,
             height: 400
         }
