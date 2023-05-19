@@ -1,14 +1,31 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const Navbar = () => {
+    const { logOut ,auth} = useContext(AuthContext);
 
-    const menuBar=<>
-          <li><Link>Home</Link></li>
-          <li><Link to='/alltoys'>All Toys</Link></li>
-          <li><Link to='/blog'>Blogs</Link></li>
-          <li><Link to='/login'>Login</Link></li>
-       
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => {
+
+            })
+            .catch(error => { error })
+    }
+
+    const menuBar = <>
+        <li><Link>Home</Link></li>
+        <li><Link to='/alltoys'>All Toys</Link></li>
+        <li><Link to='/blog'>Blogs</Link></li>
+        <li><Link to='/login'>Login</Link></li>
+        {auth.currentUser ? <>
+            {/* <li><Link to='/bookings'>My Bookings</Link></li> */}
+            <li><button onClick={handleLogOut}>SignOut</button></li>
+        </> :
+            <li><Link to='/login'>LogIn</Link></li>
+        }
+
     </>
     return (
         <div className="navbar bg-base-100">
@@ -21,16 +38,26 @@ const Navbar = () => {
                         {menuBar}
                     </ul>
                 </div>
-                <img style={{width:'80px',height:'80px'}} src="https://static.vecteezy.com/system/resources/previews/004/657/170/original/baby-shop-logo-with-cute-baby-face-illustration-free-vector.jpg" alt="" />
+                <img style={{ width: '80px', height: '80px' }} src="https://static.vecteezy.com/system/resources/previews/004/657/170/original/baby-shop-logo-with-cute-baby-face-illustration-free-vector.jpg" alt="" />
                 <a className=" text-xl ">Baby Toys</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
-                   {menuBar}
+                    {menuBar}
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Get started</a>
+
+                {
+                    auth.currentUser && <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                        <div className="w-10 rounded-full" title={auth.currentUser.displayName}>
+                            <img src={auth.currentUser?.photoURL} />
+                        </div>
+                    </label>
+                }
+
+
+
             </div>
         </div>
     );

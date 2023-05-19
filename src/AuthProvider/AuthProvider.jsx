@@ -10,7 +10,7 @@ const auth = getAuth(app);
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
-    const googleProvider=new GoogleAuthProvider()
+    const googleProvider = new GoogleAuthProvider()
 
 
     const createUser = (email, password) => {
@@ -27,11 +27,13 @@ const AuthProvider = ({ children }) => {
         return signOut(auth);
     }
 
-    const googleSignIn=()=>{
+    const googleSignIn = () => {
         setLoading(true)
-        return signInWithPopup(auth,googleProvider);
+        return signInWithPopup(auth, googleProvider);
     }
-
+    const profileUpdate = ({ name, photoUrl }) => {
+        updateProfile(auth.currentUser, { displayName: name, photoURL: photoUrl })
+    }
 
 
     useEffect(() => {
@@ -51,7 +53,9 @@ const AuthProvider = ({ children }) => {
         createUser,
         login,
         logOut,
-        googleSignIn
+        googleSignIn,
+        profileUpdate,
+        auth
     }
     return (
         <AuthContext.Provider value={authInfo}>
