@@ -3,10 +3,26 @@ import React from 'react';
 const Footer = () => {
     return (
         <div>
-            <footer className="footer p-10 bg-neutral text-neutral-content">
+            <footer className="footer p-10 bg-pink-400 text-neutral-content">
                 <div>
                 <img style={{width:'80px',height:'80px'}} className='rounded' src="https://static.vecteezy.com/system/resources/previews/004/657/170/original/baby-shop-logo-with-cute-baby-face-illustration-free-vector.jpg" alt="" />
                     <p>Baby Toys Shop<br />Providing reliable tech since 2023</p>
+                </div>
+                <div>
+                    <h1 className='text-xl'>Information</h1>
+                    <a href="">My account</a>
+                    <a href="">Checkout</a>
+                    <a href="">Cart</a>
+                    <a href="">Wishlist</a>
+                    <a href="">Contact</a>
+                </div>
+                <div>
+                <h1 className='text-xl'>Baby Toys</h1>
+                    <a href="">Request-for-a-quote</a>
+                    <a href="">Terms & Conditions</a>
+                    <a href="">Refund Policy</a>
+                    <a href="">Privacy Policy</a>
+                    <a href="">Contact</a>
                 </div>
                 <div>
                     <span className="footer-title">Social</span>
@@ -17,6 +33,7 @@ const Footer = () => {
                     </div>
                 </div>
             </footer>
+            <p className='text-1xl text-center p-2'>Copyright © 2023, Baby Toys Powered by Abdur Rahman</p>
         </div>
     );
 };
