@@ -6,7 +6,7 @@ const ShopByCategory = () => {
 
     return (
         <div>
-            <h1 className='text-3xl text-center font-bold'>Shop by category</h1>
+            <h1 className='text-3xl text-center font-bold text-sky-400'>Shop by category</h1>
             <div className='tabs mt-5 mb-10'>
                 <Tabs>
                     <TabList>
