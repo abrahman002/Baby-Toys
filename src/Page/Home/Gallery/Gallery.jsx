@@ -37,7 +37,9 @@ const Gallery = () => {
         }
     ];
     return (
-        <div className='mt-10 mb-10 md:'>
+        <div className='mt-10 mb-10 ' data-aos="fade-down"
+        data-aos-easing="linear"
+        data-aos-duration="1500">
             <h1 className='text-3xl font-bold text-center mb-5  text-sky-400'>Image Gallery</h1>
             <div className='images'>
                 <PhotoAlbum layout="rows" photos={photos} />

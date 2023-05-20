@@ -2,7 +2,7 @@ import React from 'react';
 
 const Blog = () => {
     return (
-        <div>
+        <div className='mb-10'>
             <h1 className='text-3xl text-center'>Question and Answer</h1>
               <h1 className='text-2xl mt-2'>1. What is an access token and refresh token? How do they work and where should we store them on the client-side?</h1>
               <p>Ans: Access Token: When a user logins in, the authorization server issues an access token, which is an artifact that client applications can use to make secure calls to an API server. When a client application needs to access protected resources on a server on behalf of a user, the access token lets the client signal to the server that it has received authorization by the user to perform certain tasks or access certain resources. <br />

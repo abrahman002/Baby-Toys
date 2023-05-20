@@ -3,7 +3,8 @@ import './post.css'
 
 const Post = () => {
     return (
-        <div className='mb-10 '>
+        <div className='mb-10 'data-aos="fade-up"
+        data-aos-anchor-placement="top-center">
             <h1 className='text-3xl font-bold text-center text-sky-400'>Our Recent Post</h1>
             <div className='flex justify-center post'>
                 <img src="https://i.fbcd.co/products/original/d84be1fbd046c699a46130f4dff56e3158f0d042427430a1cd7465a5fd52c0a7.jpg" alt="" />
