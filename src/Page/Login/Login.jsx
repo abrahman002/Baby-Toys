@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FcGoogle } from "react-icons/fc";
 import Swal from 'sweetalert2'
 import { AuthContext } from '../../AuthProvider/AuthProvider';
@@ -9,6 +9,10 @@ import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const Login = () => {
     const { login, googleSignIn } = useContext(AuthContext);
+    const location=useLocation();
+    const Navigate=useNavigate();
+
+    const from=location.state?.from?.pathname || '/';
 
     const handleLogin = event => {
         event.preventDefault();
@@ -26,6 +30,7 @@ const Login = () => {
                     icon: 'success',
                     confirmButtonText: 'Cool'
                 })
+                Navigate(from,{replace:true})
             })
             .catch(error => {
                 Swal.fire({
@@ -48,6 +53,7 @@ const Login = () => {
                     icon: 'success',
                     confirmButtonText: 'Cool'
                 })
+                Navigate(from,{replace:true})
             })
             .catch(error => {
                 console.log(error)
@@ -94,9 +100,14 @@ const Login = () => {
                                     </Link></a>
                                 </label>
                                 <div className="divider">OR</div>
-                                <button className='text-4xl ' onClick={handleGoogleSignIn}>
+                                <p  onClick={handleGoogleSignIn} className='btn btn-outline'>
+                                    <div className='flex items-center  text-center gap-1 text-2xl '>
+                                    <div>
                                     <FcGoogle />
-                                </button>
+                                    </div>
+                                    Google
+                                    </div>
+                                </p>
                             </div>
                         </form>
 

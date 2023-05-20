@@ -108,7 +108,12 @@ const Register = () => {
                                     </Link></a>
                                 </label>
                                 <div className="divider">OR</div>
-                                <button className='text-4xl' onClick={handleGoogleSignIn}><FcGoogle /></button>
+                                <button className='btn btn-outline' onClick={handleGoogleSignIn}><div className='flex items-center  text-center gap-1 text-2xl '>
+                                    <div>
+                                    <FcGoogle />
+                                    </div>
+                                    Google
+                                    </div></button>
                             </div>
                         </form>
                     </div>

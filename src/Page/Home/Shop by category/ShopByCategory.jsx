@@ -16,7 +16,7 @@ const ShopByCategory = () => {
 
     return (
         <div>
-            <h1 className='text-3xl text-center font-bold text-sky-400'>Shop by category{categorys.length}</h1>
+            <h1 className='text-3xl text-center font-bold text-sky-400'>Shop by category</h1>
            {
             categorys.map(category=><Category
                key={category.id}

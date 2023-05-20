@@ -19,7 +19,8 @@ const Navbar = () => {
         <li><Link to='/alltoys'>All Toys</Link></li>
         <li><Link to='/blog'>Blogs</Link></li>
         {auth.currentUser ? <>
-            {/* <li><Link to='/bookings'>My Bookings</Link></li> */}
+            <li><Link to='/addatoy'>Add A Toys</Link></li>
+            <li><Link to='/mytoys'>My Toys</Link></li>
             <li><button onClick={handleLogOut}>SignOut</button></li>
         </> :
             <li><Link to='/login'>Login</Link></li>

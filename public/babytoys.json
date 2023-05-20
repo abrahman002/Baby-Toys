@@ -1,5 +1,6 @@
 [
     {
+        "category":"Army men",
         "id":"01",
         "title": "Engine Oil Change",
         "img": "https://i.ibb.co/T2cpBd5/888.jpg",
@@ -8,6 +9,7 @@
         "Rating":"4.7"
     },
     {
+        "category":"Army men",
         "id":"02",
         "title2": "Battery Charge",
         "img2": "https://i.ibb.co/ydCbDN3/5555.jpg",
@@ -16,6 +18,7 @@
         "Rating2":"4.7"
     },
     {
+        "category":"He-Man",
         "id":"03",
         "title3": "Full car Repair",
         "img3": "https://i.ibb.co/R6Z2nFM/55.jpg",
@@ -24,6 +27,7 @@
         "Rating3":"4.7"
     },
     {
+        "category":"He-Man",
         "id":"04",
         "title4": "Engine Repair",
         "img4": "https://i.ibb.co/5MvmD2g/88.jpg",
@@ -32,6 +36,7 @@
         "Rating4":"4.7"
     },
     {
+        "category":"Lego",
         "id":"05",
         "title5": "Automatic Services",
         "img5": "https://i.ibb.co/wh7t3N3/555.jpg",
@@ -39,6 +44,7 @@
         "Rating5":"4.7"
     },
     {
+        "category":"Lego",
         "id":"06",
         "title6": "Electrical System",
         "img6": "https://i.ibb.co/KzCG8qr/8888.jpg",

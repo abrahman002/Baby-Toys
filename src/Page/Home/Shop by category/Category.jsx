@@ -1,25 +1,30 @@
-import React, { useContext } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-import { AuthContext } from '../../../AuthProvider/AuthProvider';
-import { Navigate } from 'react-router-dom';
+import Swal from 'sweetalert2'
 
 
-const Category = ({category}) => {
-     const {user}=useContext(AuthContext)
+const Category = () => {
+    
+
 
     const handleDetails=()=>{
 
-        if(user.email){
-           return <Navigate to='/blog'></Navigate>
+        if(!user){
+            window.location.href =('/blog');
         }
         else{
-            return alert('please login')
+            Swal.fire({
+                title: 'You have to log in first to view details',
+                text: 'Do you want to continue',
+                icon: 'success',
+                confirmButtonText: 'Cool'
+            })
+            window.location.href =('/login');
         }
 
     }
 
-    const {title,title2,title3,title4,title5,title6,img,img2,img3,img4,img5,img6,Rating,Rating2,Rating3,Rating4,Rating5,price}=category;
+
     return (
         <div>
             <div className='tabs mt-5 mb-10'>
@@ -33,11 +38,11 @@ const Category = ({category}) => {
                     <TabPanel>
                         <div className='grid lg:grid-cols-2 gap-5'>
                             <div className="card w-96 bg-base-100 shadow-sm mt-5">
-                                <figure><img src={img} alt="Shoes" /></figure>
+                                <figure><img src='' alt="Shoes" /></figure>
                                 <div className="card-body">
-                                    <h2 className="card-title">{title}</h2>
-                                    <p>Price:$ {price}</p>
-                                    <p>Rating: {Rating}</p>
+                                    <h2 className="card-title"></h2>
+                                    <p>Price:$ </p>
+                                    <p>Rating: </p>
                                     <div className="card-actions justify-end">
                                         <button className="btn btn-primary" onClick={handleDetails}>View Details</button>
                                     </div>
@@ -106,6 +111,8 @@ const Category = ({category}) => {
                 </Tabs>
             </div>
         </div>
+
+        
     );
 };
 
