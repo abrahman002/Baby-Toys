@@ -3,9 +3,10 @@ import React from 'react';
 
 const FeaturedProducts = () => {
     return (
-        <div className='mt-10 mb-10' data-aos="fade-down"
-        data-aos-easing="linear"
-        data-aos-duration="1500">
+        <div className='mt-10 mb-10' data-aos="fade-left"
+            data-aos-anchor="#example-anchor"
+            data-aos-offset="500"
+            data-aos-duration="500">
             <h1 className='text-3xl text-center font-bold mb-10 text-sky-400'>Featured Products</h1>
             <div className='grid lg:grid-cols-3 md:grid-cols-1 gap-5'>
                 <div className="card w-96 bg-base-100 mb-5 shadow-md">
