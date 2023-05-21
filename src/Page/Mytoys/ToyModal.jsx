@@ -27,12 +27,12 @@ const ToyModal = ({ toy,setAddToy }) => {
                 console.log(data)
                 if (data.modifiedCount > 0) {
                     
-                    // Swal.fire({
-                    //     title: 'Items Updated Successfull',
-                    //     text: 'Do you want to continue',
-                    //     icon: 'success',
-                    //     confirmButtonText: 'Cool'
-                    // })
+                    Swal.fire({
+                        title: 'Items Updated Successfull',
+                        text: 'Do you want to continue',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                    })
                     fetch(url)
                         .then(res => res.json())
                         .then(data => {

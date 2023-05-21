@@ -1,6 +1,10 @@
+import { Link } from "react-router-dom";
 import Toys from "./Toys";
+import { useContext } from "react";
+import { AuthContext } from "../../../AuthProvider/AuthProvider";
 
 const Category = ({toy}) => {
+    const {user}=useContext(AuthContext)
 
     const {toyName,price,rating,image}=toy
 
@@ -13,7 +17,9 @@ const Category = ({toy}) => {
                     <p>Price:$ {price}</p>
                     <p>Rating:$ {rating}</p>
                     <div className="card-actions justify-end">
-                        <Toys toy={toy}></Toys>
+                       {
+                        user?<Toys toy={toy}></Toys>: <button className="btn"><Link to='/login'>View Details</Link></button>
+                       }
                     </div>
                 </div>
             </div>

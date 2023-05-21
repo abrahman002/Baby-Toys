@@ -1,11 +1,12 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import SignleToy from '../SignleToy/SignleToy';
 
 const DataCard = ({data}) => {
     // console.log(data)
     const {user}=useContext(AuthContext);
+    const location=useLocation();
 
    const defaultname=user?.displayName;
 
@@ -36,7 +37,7 @@ const DataCard = ({data}) => {
             <td>{quantity}</td>
             <th>
                {
-                user?<SignleToy data={data}></SignleToy>: <button><Link to='/login'>View Details</Link></button>
+                user?<SignleToy data={data}></SignleToy>: <button><Link to='/login' className='btn' state={{from:location}} replace >View Details</Link></button>
                }
                
             </th>
