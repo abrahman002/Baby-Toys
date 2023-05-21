@@ -24,7 +24,7 @@ const AddAToy = () => {
         }
         console.log(addToy)
 
-        fetch('http://localhost:5000/addatoy', {
+        fetch('https://baby-toys-server-psi.vercel.app/addatoy', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

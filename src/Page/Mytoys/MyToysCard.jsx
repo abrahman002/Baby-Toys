@@ -3,7 +3,7 @@ import ToyModal from './ToyModal';
 
 
 
-const MyToysCard = ({ toy ,handleDelete}) => {
+const MyToysCard = ({ toy ,handleDelete,setAddToy}) => {
     console.log(toy)
 
     const { _id,toyName, category, details, email, image, price, quantity, rating } = toy;
@@ -35,7 +35,10 @@ const MyToysCard = ({ toy ,handleDelete}) => {
             </td>
             <td>{rating}</td>
             <th>
-            <ToyModal></ToyModal>
+            <ToyModal
+              toy={toy}
+              setAddToy={setAddToy}
+            ></ToyModal>
             </th>
         </tr>
 

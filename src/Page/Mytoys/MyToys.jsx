@@ -7,7 +7,7 @@ const MyToys = () => {
     const { user } = useContext(AuthContext);
     const [addToy, setAddToy] = useState([])
 
-    const url = `http://localhost:5000/addatoy?email=${user.email}`
+    const url = `https://baby-toys-server-psi.vercel.app/addatoy?email=${user.email}`
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
@@ -26,7 +26,7 @@ const MyToys = () => {
                 confirmButtonText: 'Cool'}
             )
         if (proceed) {
-            fetch(`http://localhost:5000/addatoy/${id}`, {
+            fetch(`https://baby-toys-server-psi.vercel.app/addatoy/${id}`, {
                 method: "DELETE"
             })
                 .then(res => res.json())
@@ -45,9 +45,21 @@ const MyToys = () => {
                 })
         }
     }
+
+    const hanldeShort=()=>{
+        // const sortedPrice = addToy.sort((a, b) => {
+        //     if (new price(a.price) > new price(b.price)) return 1
+        //     if (new price(a.price) < new price(b.price)) return -1
+        //     return 0
+        //   })
+        //   setAddToy(sortedPrice)
+    }
     return (
         <div>
             <h1 className='text-3xl text-center'>My All Toys</h1>
+            <div className='flex justify-center mt-5'>
+            <button className='btn btn-success' onClick={hanldeShort}>Short By Price</button>
+            </div>
             <div className="overflow-x-auto w-full mt-5 mb-5">
                 <table className="table w-full">
                     {/* head */}
@@ -67,6 +79,7 @@ const MyToys = () => {
                                 key={toy._id}
                                 toy={toy}
                                 handleDelete={handleDelete}
+                                setAddToy={setAddToy}
                             ></MyToysCard>)
                         }
                     </tbody>

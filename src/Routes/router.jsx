@@ -24,7 +24,8 @@ const router = createBrowserRouter([
       },
       {
         path:'/alltoys',
-        element:<Alltoys></Alltoys>
+        element:<Alltoys></Alltoys>,
+        loader:()=>fetch('http://localhost:5000/alltoy')
       },
       {
         path:'/blog',
@@ -33,10 +34,12 @@ const router = createBrowserRouter([
       {
         path:'/addatoy',
         element:<PrivetRouter><AddAToy></AddAToy></PrivetRouter>
+        
       },
       {
         path:'/mytoys',
         element:<PrivetRouter><MyToys></MyToys></PrivetRouter>
+       
       },
       {
         path:'/login',
