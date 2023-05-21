@@ -14,7 +14,7 @@ const ShopByCategory = () => {
     }
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/category/${categorys}`)
+        fetch(`https://baby-toys-server-psi.vercel.app/category/${categorys}`)
         .then(res =>res.json())
         .then(data =>settoys(data))
     },[categorys])
